@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+</head>
+<body>
+
+
+                        <div class="login-form">
+                            <h4><img src="images/BOOK.jpg" style="width:175px;height:125px;"></h4>
+                            <!-- <h5><center>REGISTER</center></h5> -->
+
+                            <form id="edit-profile" method="post" action="page_register.html">
+                                <div class="form-group">
+                                    <!-- <label>User Name</label> -->
+                                    <input type="text" class="form-control" placeholder="User Name" required name="uname" id="uname">
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label>Email address</label> -->
+                                    <input type="email" class="form-control" placeholder="Email" required name="uemail" id="uemail">
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label>User Name</label> -->
+                                    <input type="number" class="form-control" placeholder="Mobile Number" required name="uphone" id="uphone">
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label>Password</label> -->
+                                    <input type="password" class="form-control" placeholder="Password" required name="upassword1" id="upassword1">
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label>Confirm Password</label> -->
+                                    <input type="password" class="form-control" placeholder="Confirm Password" required name="upassword2" id="upassword2">
+                                </div>
+                                <button type="button" name="submit" onclick="registersubmit()" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
+                             </form>
+                               <!--  <div class="social-login-content">
+                                    <div class="social-button">
+                                        <button type="button" class="btn btn-primary bg-facebook btn-flat btn-addon m-b-10"><i class="ti-facebook"></i>Register with facebook</button>
+                                        <button type="button" class="btn btn-primary bg-twitter btn-flat btn-addon m-t-10"><i class="ti-twitter"></i>Register with twitter</button>
+                                    </div>
+                                </div> -->
+                                <div class="register-link m-t-15 text-center">
+                                    <p>Already have account ? <a href="login_register.html" type="button" class="btn btn-primary"> Sign in</a></p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery vendor -->
+    <script src="assets/js/lib/jquery.min.js"></script>
+    <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+
+    <script src="assets/js/lib/toastr/toastr.min.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/toastr/toastr.init.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/sweetalert/sweetalert.min.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/sweetalert/sweetalert.init.js"></script>
+
+    <script>
+        function registersubmit()
+        {
+            var uname=document.forms['edit-profile']['uname'].value;
+            var uemail=document.forms['edit-profile']['uemail'].value;
+            var uphone=document.forms['edit-profile']['uphone'].value;
+            var upass1=document.forms['edit-profile']['upassword1'].value;
+            var upass2=document.forms['edit-profile']['upassword2'].value;
+
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+            var phoneNum = uphone.replace(/[^\d]/g, '');
+
+            if(uname=="" || uemail=="" || uphone=="" || upass1=="" || upass2=="")
+            {
+                alert('Please fill the form')
+            }
+            else if(reg.test(uemail) == false)
+            {
+                alert("You have entered an invalid email format")
+            }
+            else if(phoneNum.length != 10)
+            {
+                alert('Enter a Valid phone number')
+            }
+            else if(upass1 != upass2)
+            {
+                alert('Passwords does not match')
+            }
+            else
+            {
+                alert('Registration Succesfull')
+            }
+        }
+    </script>
+
+</body>
+
+</html>

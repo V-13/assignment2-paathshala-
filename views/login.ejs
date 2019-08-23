@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+    </head>
+
+
+
+    
+    <body>
+                        <div class="login-form">
+                            <h4><img src="images/BOOK.jpg" style="width:175px;height:125px;"></h4>
+                            <!-- <h5><center>REGISTER</center></h5> -->
+
+                            <form id="edit-profile" method="post" action="login_register.html">
+                                <div class="form-group">
+                                    <!-- <label>Email address</label> -->
+                                    <input type="email" class="form-control" placeholder="Email" required name="uemail" id="uemail">
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label>Password</label> -->
+                                    <input type="password" class="form-control" placeholder="Password" required name="upassword1" id="upassword1">
+                                </div>
+                                <button type="button" name="submit" onclick="registersubmit()" class="btn btn-primary btn-flat m-b-30 m-t-30">LOGIN</button>
+                             </form>
+                               <!--  <div class="social-login-content">
+                                    <div class="social-button">
+                                        <button type="button" class="btn btn-primary bg-facebook btn-flat btn-addon m-b-10"><i class="ti-facebook"></i>Register with facebook</button>
+                                        <button type="button" class="btn btn-primary bg-twitter btn-flat btn-addon m-t-10"><i class="ti-twitter"></i>Register with twitter</button>
+                                    </div>
+                                </div> -->
+                                <div class="register-link m-t-15 text-center">
+                            
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery vendor -->
+    <script src="assets/js/lib/jquery.min.js"></script>
+    <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+
+    <script src="assets/js/lib/toastr/toastr.min.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/toastr/toastr.init.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/sweetalert/sweetalert.min.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/sweetalert/sweetalert.init.js"></script>
+
+    <script>
+        function registersubmit()
+        {
+            
+            var uemail=document.forms['edit-profile']['uemail'].value;
+            
+            var upass1=document.forms['edit-profile']['upassword1'].value;
+            
+
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+            
+
+            if(uemail=="" ||  upass1=="" )
+            {
+                alert('Please fill the form')
+            }
+            else if(reg.test(uemail) == false)
+            {
+                alert("You have entered an invalid email format")
+            }
+            else
+            {
+                alert('Login Succesfull')
+            }
+        }
+    </script>
+
+</body>
+
+</html>

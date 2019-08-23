@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Authors</title>
+</head>
+<body>
+    
+        <div class="card-columns p-5">
+                <% for(var i=0;i<writers.length;i++){ %>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= writers[i].title %></h5>
+                                <img  src="<%=writers[i].picture%>" alt="Card image cap" style="width:50% ;height:50%">
+                                <p class="card-text"><strong>Country: </strong><%= writers[i].genre%><br><strong>D.o.B: </strong><%= writers[i].author %><br>  <strong>Books:</strong><%=writers[i].books%></p>
+                            </div>
+                        </div>
+                <% } %>
+            </div>
+</body>
+</html>
