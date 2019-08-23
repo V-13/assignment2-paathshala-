@@ -149,6 +149,6 @@ app.get('/addbooks',(req,res)=>{
     res.render("addbooks")
 });
 
-app.listen(3500,()=>{
+app.listen(process.env.PORT||3500,()=>{
     console.log("server running on 3500")
 });
