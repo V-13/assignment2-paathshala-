@@ -37,8 +37,79 @@ writers =[
     books:"Naalukettu,Randamoozham"
 },
 
+{
+    title:"Paulo Cohelo",
+    picture:"/images/palo.jpg",
+    genre:"Brazil",
+    author:"1947",
+    books:"Alchemist"
+},
+
+{
+    title:"Dan Brown",
+    picture:"/images/dan.jpg",
+    genre:"America",
+    author:"1964",
+    books:"	Digital Fortress,Angels & Demons"
+},
+
+
+
+
 
 ];
+
+
+book12 =[
+    {
+      title:"Lord of the Rings",
+      picture:"/images/4.jpg",
+      genre:"Adventure",
+      author:"JRR Tolkien",
+      books:"lord of the rings,Hobbit.."
+},
+
+{
+    title:"Harry Potter",
+    picture:"/images/8.jpg",
+    genre:"Fiction",
+    author:"JK Rowling",
+    books:"Harry Potter series"
+},
+
+{
+    title:"Wings of fire",
+    picture:"/images/wings.jpg",
+    genre:"Autobiograohy",
+    author:"APJ Abdul Kalam",
+    books:"wings of fire"
+},
+
+{
+    title:"Randamoozham",
+    picture:"/images/11.jpg",
+    genre:"Religous and Myth",
+    author:"M T Vasudhevan Nair",
+    books:"Naalukettu,Randamoozham"
+},
+
+{
+    title:"Alchemist",
+    picture:"/images/10.jpg",
+    genre:"Story",
+    author:"Paulo Cohelo",
+    books:""
+},
+{
+    title:"Da Vinci code",
+    picture:"/images/2.jpg",
+    genre:"Mystery, Detective fiction",
+    author:"Dan Brown",
+    books:""
+},
+
+];
+
 
 
 
@@ -68,6 +139,11 @@ app.get('/reg',(req,res)=>{
 app.get('/authors',(req,res)=>{
     res.render("authors",writers)
 });
+
+app.get('/book',(req,res)=>{
+    res.render("book",book12)
+});
+
 
 app.get('/addbooks',(req,res)=>{
     res.render("addbooks")
